@@ -1,0 +1,29 @@
+<div class="container">
+<h1>Welcome to Users Management Site !</h1>
+
+<div>
+<form>
+    <input type="text" name="search" placeholder="Search" [(ngModel)]="searchUser" (keyup)="filterUser()"> 
+    <button (click)="addNewUserUI()">Add</button>
+</form>
+</div>
+
+<div class="users-container">
+<div class="users-list">
+    <div *ngIf="newUser">
+        <app-new-user (notify)="onNotify($event)"></app-new-user>
+    </div>
+<div  *ngFor="let user of users">
+    <div (click)="visibleTasksPosts(user); newUser=false">
+        <app-user [user]="user" (notify)="onNotify($event)" (onUserSelected)="onUserSelected($event)"></app-user>
+    </div>
+</div>
+</div>
+
+<div *ngIf="currentUser!==null" class="tasks-posts">
+    
+<app-tasks-and-posts [user]="currentUser" (notify)="onNotify($event)"></app-tasks-and-posts>
+</div>
+</div>
+<!-- ----------------------------------------------------------------- -->
+</div>

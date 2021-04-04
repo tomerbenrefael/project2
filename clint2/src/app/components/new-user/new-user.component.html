@@ -1,0 +1,14 @@
+<h3>Add New User</h3> 
+
+<form #f="ngForm" (ngSubmit)="addNewUser()">
+    <label for="name">Name:</label>
+   <input required name="name" type="text" [(ngModel)]="newUser.name"> <br/>
+   
+   <label required for="usremail"> Email:</label>
+    <input name="usremail" type="email" [(ngModel)]="newUser.email">
+
+    
+    <button type="button" (click)="cancelAdd()" >Cancel</button>
+   <button type="submit" [disabled]="!f.valid" >Add</button>
+
+</form>   

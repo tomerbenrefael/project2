@@ -1,0 +1,16 @@
+.users-list{
+    width: 350px;
+}
+
+.container{
+    position: relative;
+}
+.users-container{
+    display:flex;
+}
+.users-list{
+    flex:1;
+}
+.tasks-posts{
+    flex:1;
+}

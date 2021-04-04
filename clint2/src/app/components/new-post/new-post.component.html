@@ -1,0 +1,16 @@
+<div class="new-posts">
+    <div>
+    <label>Title:</label>
+    <input type="text" name="title" [(ngModel)]="title"/>
+    </div>
+    <div>
+        <label>Body:</label>
+        <input type="text" name="body" [(ngModel)]="body"/>
+    </div>
+    
+    <div>
+        <button (click)="cancel()">Cancel</button>&nbsp;
+        <button (click)="add()">Add</button>
+    </div>
+</div>
+

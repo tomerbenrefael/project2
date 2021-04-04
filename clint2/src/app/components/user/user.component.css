@@ -1,0 +1,17 @@
+.user-details{
+    border:1.5px solid red;
+    padding: 20px;
+    margin:10px;
+}
+.user-details.completed{
+    border:1.5px solid green;
+}
+.user-details.selected{
+    background:orange;
+}
+.other-data{
+    padding:10px;
+}
+label.selectID{
+    cursor:pointer;
+}

@@ -1,0 +1,28 @@
+<div class="user">
+    <div class="user-details" [ngClass]="{'completed': user.completed,'selected':user.selected}">
+        <form #f="ngForm">
+            <label (click)="selectUser()" class="selectID">ID : {{user._id}}</label><br/><br/>
+            <label for="name"><strong>Name: </strong></label>
+            <input required name="name" type="text" [(ngModel)]="user.name"><br/>
+            <label required for="usremail"> <strong>Email: </strong></label>
+            <input name="usremail" type="email" [(ngModel)]="user.email">
+        
+            <div class="other-section">
+                <button class="btn btn-primary" (mouseenter)="toggleInfo()" (click)="closeInfo()">Other Data</button>
+                <div class="form-group other-data" *ngIf="moreInfo === true">
+                    <label for="street">Street:</label>
+                    <input type="text" name="street" [(ngModel)]="user.street"><br/>
+                    <label for="city">City:</label>
+                    <input type="text" name="city" [(ngModel)]="user.city"><br/>
+                    <label for="zipcode">Zip Code:</label>
+                    <input type="text" name="zipcode" [(ngModel)]="user.zipcode"><br/>
+                </div>
+            </div>
+            <button class="btn btn-warning" (click)="updateUser()">Update</button>
+            &nbsp;
+            <button class="btn btn-danger" (click)="deleteUser()">Delete</button>
+            <!-- <button type="submit" [disabled]="!f.valid" >Add</button> -->
+        
+        </form>
+    </div>
+</div>
